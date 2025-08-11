@@ -1,0 +1,47 @@
+<div class="currency-container">
+  <h1>Currency Rates</h1>
+
+  <!-- 基準幣選擇 -->
+  <div class="modal-row">
+    <label>基準幣：</label>
+    <select v-model="baseCurrency" @change="changeBaseCurrency">
+      <option v-for="c in currencies" :key="c.code" :value="c.code">
+        {{ c.name }} ({{ c.code }})
+      </option>
+    </select>
+  </div>
+
+  <button class="add-btn" @click="openAddModal">＋</button>
+
+  <div class="currency-list">
+    <div v-for="currency in currencies" :key="currency.code" class="currency-item">
+      <span class="currency-name">{{ currency.name }} ({{ currency.code }})</span>
+      <span class="currency-buy">買進：<b>{{ currency.buy !== null && currency.buy !== undefined ? currency.buy : '--' }}</b></span>
+      <span class="currency-sell">賣出：<b>{{ currency.sell !== null && currency.sell !== undefined ? currency.sell : '--' }}</b></span>
+      <button
+        v-if="!fixedCurrencies.includes(currency.code)"
+        @click="removeCurrency(currency.code)"
+      >
+        －
+      </button>
+    </div>
+  </div>
+
+  <!-- 新增幣別 Modal -->
+  <div v-if="showAddModal" class="modal-overlay">
+    <div class="modal-content">
+      <label>選擇幣別：</label>
+      <select v-model="selectedCurrencyCode">
+        <option value="">請選擇</option>
+        <option v-for="opt in allCurrencyOptions" :key="opt.code" :value="opt.code">
+          {{ opt.name }} ({{ opt.code }})
+        </option>
+      </select>
+
+      <div class="modal-actions">
+        <button @click="addCurrency">新增</button>
+        <button @click="closeAddModal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>

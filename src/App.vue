@@ -5,7 +5,6 @@
     <GroceryList />
     <CurrencyRates />
     <WeatherForecast />
-    <DatePicker />
   </div>
 </template>
 
@@ -14,7 +13,6 @@ import TodoList from './components/TodoList.vue';
 import GroceryList from './components/GroceryList.vue';
 import CurrencyRates from './components/CurrencyRates.vue';
 import WeatherForecast from './components/WeatherForecast.vue';
-import DatePicker from './components/DatePicker.vue';
 
 export default {
   name: 'App',
@@ -23,7 +21,6 @@ export default {
     GroceryList,
     CurrencyRates,
     WeatherForecast,
-    DatePicker
   }
 }
 </script>

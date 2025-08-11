@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "A Vue application for managing to-do lists, grocery lists, currency rates, and weather forecasts.",
   "main": "src/main.js",
-"scripts": {
-  "serve": "vue-cli-service serve",
-  "build": "vue-cli-service build",
-  "dev": "npm run serve"
-},
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "dev": "npm run serve"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
     "@vitest/ui": "^3.2.4",
     "@vue/cli-service": "^4.5.0",
     "@vue/compiler-sfc": "^3.0.0",

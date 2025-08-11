@@ -1,0 +1,161 @@
+.currency-container {
+  max-width: 600px;
+  margin: 40px auto 0 auto;
+  background: #f0f6fb;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(100,130,160,0.2);
+  padding: 32px 24px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #3a5068;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2em;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.modal-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.modal-row label {
+  min-width: 70px;
+}
+
+.add-btn {
+  background: #a0c4ff;
+  color: #034078;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 2em;
+  box-shadow: 0 2px 8px rgba(80,120,180,0.15);
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  transition: background 0.2s;
+}
+.add-btn:hover {
+  background: #6699ff;
+}
+
+.currency-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.currency-item {
+  background: #dbe9ff;
+  border-radius: 20px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  box-shadow: 0 3px 10px rgba(80,120,180,0.15);
+}
+
+.currency-name {
+  flex: 1;
+  font-weight: 700;
+  color: #034078;
+}
+
+.currency-buy,
+.currency-sell {
+  width: 110px;
+  text-align: right;
+  color: #1a3c6e;
+  font-weight: 600;
+}
+
+.currency-item button {
+  background: #6699ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1em;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.currency-item button:hover {
+  background: #2a62c9;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(176,196,222,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(50,90,150,0.3);
+  padding: 28px 24px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #034078;
+}
+
+.modal-content label {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.modal-content select {
+  border: 1.5px solid #a6bee9;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: #e6f0ff;
+  font-size: 1em;
+  color: #034078;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.modal-content select:focus {
+  border-color: #6699ff;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-actions button {
+  background: #6699ff;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  font-weight: 600;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-actions button:hover {
+  background: #2a62c9;
+}
