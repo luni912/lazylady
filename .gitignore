@@ -1,1 +1,25 @@
+# macOS 系統檔
+.DS_Store
+.Trash/
+
+# Node.js / npm / Vue 產生的資料夾
 node_modules/
+dist/
+.cache/
+
+# 編輯器相關
+.vscode/
+.idea/
+*.swp
+
+# 日誌檔案
+*.log
+
+# 編譯產物
+*.out
+*.o
+
+# 環境設定檔案（可視專案需要調整）
+.env
+.env.local
+.env.*.local

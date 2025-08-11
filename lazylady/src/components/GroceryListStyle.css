@@ -1,0 +1,158 @@
+.grocery-container {
+  max-width: 600px;
+  margin: 40px auto 0 auto;
+  background: #f6fbf7;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(180,220,180,0.10);
+  padding: 32px 24px;
+}
+
+h1 {
+  color: #5b8c6a;
+  font-size: 2.2em;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.add-btn {
+  background: #c8e6ce;
+  color: #3b5b4b;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 2em;
+  box-shadow: 0 2px 8px rgba(180,220,180,0.08);
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: background 0.2s;
+}
+.add-btn:hover {
+  background: #b2dfdb;
+}
+
+.grocery-btn {
+  background: #e6f4ea;
+  color: #5b8c6a;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 22px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  box-shadow: 0 2px 8px rgba(180,220,180,0.08);
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.grocery-btn:hover {
+  background: #c8e6ce;
+  color: #3b5b4b;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(180,220,180,0.18);
+  padding: 32px 28px;
+  min-width: 340px;
+  border: 1.5px solid #bfe2c7;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  border: 1.5px solid #bfe2c7;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #f6fbf7;
+  font-size: 1em;
+  color: #3b5b4b;
+  margin: 0 4px 0 0;
+  transition: border 0.2s;
+  outline: none;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border: 1.5px solid #5b8c6a;
+  background: #e6f4ea;
+}
+
+.modal-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.modal-row label {
+  min-width: 70px;
+  color: #5b8c6a;
+  font-size: 1em;
+}
+
+.grocery-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grocery-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.qty-input {
+  width: 50px;
+  border: 1px solid #bfe2c7;
+  border-radius: 6px;
+  padding: 4px 6px;
+  background: #f6fbf7;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.modal-actions button,
+.modal-row > button,
+.grocery-list li > button {
+  background: #c8e6ce;
+  color: #3b5b4b;
+  border: none;
+  border-radius: 16px;
+  padding: 6px 18px;
+  font-size: 1em;
+  margin-right: 8px;
+  box-shadow: 0 2px 8px rgba(180,220,180,0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+}
+
+.modal-actions button:hover,
+.modal-row > button:hover,
+.grocery-list li > button:hover {
+  background: #b2dfdb;
+  color: #2e4d3a;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(246,251,247,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}

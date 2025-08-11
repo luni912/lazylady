@@ -1,0 +1,42 @@
+<div class="todo-container">
+    <h1>To Do List</h1>
+    <div class="todo-input-row">
+      <input v-model="newTitle" placeholder="Title" />
+      <input v-model="newDueDate" type="date" placeholder="Due Date" />
+      <textarea v-model="newContent" placeholder="Content"></textarea>
+      <button @click="addTodo">＋</button>
+    </div>
+    <div style="margin-top:20px;">
+      <button
+        v-for="todo in todos"
+        :key="todo.id"
+        @click="openModal(todo)"
+        style="display:block;margin-bottom:10px;"
+      >
+        {{ todo.createdAt }} | Due: {{ todo.dueDate }} | {{ todo.title }}
+      </button>
+    </div>
+
+    <!-- Modal -->
+    <div v-if="showModal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-row">
+          <label>標題：</label>
+          <input v-model="selectedTodo.title" />
+        </div>
+        <div class="modal-row">
+          <label>內容：</label>
+          <textarea v-model="selectedTodo.content"></textarea>
+        </div>
+        <div class="modal-row">
+          <label>Due Date：</label>
+          <input v-model="selectedTodo.dueDate" type="date" />
+        </div>
+        <div class="modal-actions">
+          <button @click="updateTodo">修改</button>
+          <button @click="confirmDelete">刪除</button>
+          <button @click="closeModal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>

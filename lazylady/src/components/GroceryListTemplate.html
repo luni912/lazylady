@@ -1,0 +1,72 @@
+<div class="grocery-container">
+  <h1>Grocery List</h1>
+  <button class="add-btn" @click="openAddModal">＋</button>
+  <div>
+    <button
+      v-for="grocery in groceries"
+      :key="grocery.id"
+      @click="openModal(grocery)"
+      class="grocery-btn"
+    >
+      {{ grocery.createdAt }} | Due: {{ grocery.dueDate }} | {{ grocery.title }}
+    </button>
+  </div>
+
+  <!-- 新增 Modal -->
+  <div v-if="showAddModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-row">
+        <label>標題：</label>
+        <input v-model="newTitle" />
+      </div>
+      <div class="modal-row">
+        <label>Due Date：</label>
+        <input v-model="newDueDate" type="date" />
+      </div>
+      <div class="modal-row">
+        <label>要買的清單：</label>
+        <ul class="grocery-list">
+          <li v-for="(item, idx) in newItems" :key="idx">
+            <input v-model="item.name" placeholder="items" />
+            <input type="number" min="0" v-model.number="item.qty" class="qty-input" placeholder="數量" />
+            <button @click="removeNewItem(idx)">－</button>
+          </li>
+        </ul>
+        <button @click="addNewItem">Add More</button>
+      </div>
+      <div class="modal-actions">
+        <button @click="addGrocery">＋</button>
+        <button @click="closeAddModal">Ｘ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 編輯 Modal -->
+  <div v-if="showModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-row">
+        <label>Title：</label>
+        <input v-model="selectedGrocery.title" />
+      </div>
+      <div class="modal-row">
+        <label>Due Date：</label>
+        <input v-model="selectedGrocery.dueDate" type="date" />
+      </div>
+      <div class="modal-row">
+        <label>要買的...：</label>
+        <ul class="grocery-list">
+          <li v-for="(item, idx) in selectedGrocery.items" :key="idx">
+            <input v-model="item.name" placeholder="品項" />
+            <input type="number" min="0" v-model.number="item.qty" class="qty-input" placeholder="數量" />
+          </li>
+        </ul>
+        <button @click="addItemToSelectedGrocery">Add More</button>
+      </div>
+      <div class="modal-actions">
+        <button @click="updateGrocery">Edited</button>
+        <button @click="confirmDelete">Delete</button>
+        <button @click="closeModal">X</button>
+      </div>
+    </div>
+  </div>
+</div>
