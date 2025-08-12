@@ -1,0 +1,140 @@
+.weather-container {
+  max-width: 600px;
+  margin: 40px auto 0 auto;
+  background: #fdf6e3;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(100,70,40,0.3);
+  padding: 32px 24px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #5b4636;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2em;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.add-btn {
+  background: #deb887;
+  color: #5b4636;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 2em;
+  box-shadow: 0 2px 8px rgba(100,70,40,0.2);
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  transition: background 0.2s;
+}
+.add-btn:hover {
+  background: #d2a679;
+}
+
+.weather-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.weather-item {
+  background: #f5deb3;
+  border-radius: 20px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  box-shadow: 0 3px 10px rgba(100,70,40,0.15);
+}
+
+.weather-name {
+  flex: 1;
+  font-weight: 700;
+  color: #5b4636;
+}
+
+.weather-temp,
+.weather-desc {
+  width: 110px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.weather-item button {
+  background: #d2a679;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1em;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.weather-item button:hover {
+  background: #a0522d;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(222,184,135,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff8dc;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(100,70,40,0.3);
+  padding: 28px 24px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #5b4636;
+}
+
+.modal-content select {
+  border: 1.5px solid #deb887;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: #fffaf0;
+  font-size: 1em;
+  color: #5b4636;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.modal-content select:focus {
+  border-color: #a0522d;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-actions button {
+  background: #d2a679;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  font-weight: 600;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-actions button:hover {
+  background: #a0522d;
+}

@@ -1,0 +1,37 @@
+<div class="weather-container">
+  <h1>Weather Forecast</h1>
+
+  <button class="add-btn" @click="openAddModal">＋</button>
+
+  <div class="weather-list">
+    <div v-for="city in cities" :key="city.id" class="weather-item">
+      <span class="weather-name">{{ city.name }}</span>
+      <span class="weather-temp">溫度：<b>{{ city.temp !== null ? city.temp + '°C' : '--' }}</b></span>
+      <span class="weather-desc">{{ city.weather || '--' }}</span>
+      <button
+        v-if="!fixedCities.includes(city.name)"
+        @click="removeCity(city.name)"
+      >
+        －
+      </button>
+    </div>
+  </div>
+
+  <!-- 新增城市 Modal -->
+  <div v-if="showAddModal" class="modal-overlay">
+    <div class="modal-content">
+      <label>選擇城市：</label>
+      <select v-model="selectedCityId">
+        <option value="">請選擇</option>
+        <option v-for="opt in allCityOptions" :key="opt.id" :value="opt.id">
+          {{ opt.name }}
+        </option>
+      </select>
+
+      <div class="modal-actions">
+        <button @click="addCity">新增</button>
+        <button @click="closeAddModal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
