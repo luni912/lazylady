@@ -159,3 +159,34 @@ h1 {
 .modal-actions button:hover {
   background: #2a62c9;
 }
+.currency-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.currency-base {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.currency-base label {
+  font-weight: 600;
+}
+
+.currency-base select {
+  padding: 6px 10px;
+  border: 1.5px solid #a6bee9;
+  border-radius: 8px;
+  background: #e6f0ff;
+  font-size: 1em;
+  color: #034078;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.currency-base select:focus {
+  border-color: #6699ff;
+}

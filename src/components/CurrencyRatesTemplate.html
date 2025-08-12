@@ -1,17 +1,18 @@
 <div class="currency-container">
   <h1>Currency Rates</h1>
 
-  <!-- 基準幣選擇 -->
-  <div class="modal-row">
-    <label>基準幣：</label>
-    <select v-model="baseCurrency" @change="changeBaseCurrency">
-      <option v-for="c in currencies" :key="c.code" :value="c.code">
-        {{ c.name }} ({{ c.code }})
-      </option>
-    </select>
+  <!-- 基準幣選擇 + 新增幣別 按鈕 在同一行 -->
+  <div class="currency-header">
+    <div class="currency-base">
+      <label>基準幣：</label>
+      <select v-model="baseCurrency" @change="changeBaseCurrency">
+        <option v-for="c in currencies" :key="c.code" :value="c.code">
+          {{ c.name }} ({{ c.code }})
+        </option>
+      </select>
+    </div>
+    <button class="add-btn" @click="openAddModal">＋</button>
   </div>
-
-  <button class="add-btn" @click="openAddModal">＋</button>
 
   <div class="currency-list">
     <div v-for="currency in currencies" :key="currency.code" class="currency-item">
